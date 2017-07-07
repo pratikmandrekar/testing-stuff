@@ -1,0 +1,787 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Mapbox Distance and Duration",
+    "_postman_id": "375d306d-21a5-cd72-a8c7-7c5a7da6fa1b",
+    "description": "The Matrix API returns travel times between many points.\n\nFor example, given 3 locations A, B, C, the Matrix API will return a matrix of all travel times in seconds between the locations:\n\n<table>\n    <tr>\n    \t<td>A</td>\n        <td>A</td>\n        <td>B</td>\n        <td>C</td>\n    </tr>\n    <tr>\n    \t<td>A</td>\n        <td>A->A</td>\n        <td>A->B</td>\n        <td>A->C</td>\n    </tr>\n    <tr>\n    \t<td>B</td>\n        <td>B->A</td>\n        <td>B->B</td>\n        <td>B->C</td>\n    </tr>\n    <tr>\n    \t<td>C</td>\n        <td>C->A</td>\n        <td>C->B</td>\n        <td>A->C</td>\n    </tr>\n</table>\n\n\nThe Matrix API will always return the duration on the fastest route. Durations between points may not be symmetric (for example A to B may have a different duration than B to A), as the routes may differ by direction due to one-way streets or turn restrictions. The Matrix API returns durations in seconds. It does not return route geometries or distances.\n\nThis API allows you to build tools that efficiently check the reachability of coordinates from each other, filter points by travel time, or run your own algorithms for solving optimization problems.\n\nLimits\n\nMaximum 60 requests per minute\nMaximum 25 input coordinates\nFor example you can request a symmetric 25x25 matrix, an asymmetric 1x24 matrix with distinct coordinates or a 12x24 where sources and destinations share some coordinates.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "a498a9c2-c21b-1408-4c2f-1c2bf8d16372",
+      "name": "Mapbox",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "f741bc44-972a-2964-3162-16545d5ad06a",
+          "name": "Driving Duration (in seconds)",
+          "request": {
+            "url": {
+              "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "mapbox",
+                "com"
+              ],
+              "path": [
+                "directions-matrix",
+                "v1",
+                "mapbox",
+                "driving",
+                "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+              ],
+              "query": [
+                {
+                  "key": "sources",
+                  "value": "0",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "destinations",
+                  "value": "1",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "access_token",
+                  "value": "{{access_token}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "76136b01-fb1c-1f5b-e13f-3e493bbee5c4",
+              "name": "Driving Duration Between MG Road Metro and Indiranagar Metro",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+                  "protocol": "https",
+                  "auth": {},
+                  "host": [
+                    "api",
+                    "mapbox",
+                    "com"
+                  ],
+                  "path": [
+                    "directions-matrix",
+                    "v1",
+                    "mapbox",
+                    "driving",
+                    "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sources",
+                      "value": "0",
+                      "equals": true,
+                      "description": ""
+                    },
+                    {
+                      "key": "destinations",
+                      "value": "1",
+                      "equals": true,
+                      "description": ""
+                    },
+                    {
+                      "key": "access_token",
+                      "value": "{{access_token}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "header": [],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "max-age=0",
+                  "name": "Cache-Control",
+                  "description": ""
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "name": "Connection",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "164",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jun 2017 09:35:48 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a4-QHw6paKInVNHGS70MbI7KA\"",
+                  "name": "ETag",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 a1a8d4d26d621f1f9229ae3a9a396162.cloudfront.net (CloudFront)",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Amz-Cf-Id",
+                  "value": "HZfXCv0NWgbTv9ogKh22spLDWK6oLeuorUcbhUU1wSJte0abGdpQxA==",
+                  "name": "X-Amz-Cf-Id",
+                  "description": ""
+                },
+                {
+                  "key": "X-Cache",
+                  "value": "Miss from cloudfront",
+                  "name": "X-Cache",
+                  "description": ""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "name": "X-Powered-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Interval",
+                  "value": "60",
+                  "name": "X-Rate-Limit-Interval",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Limit",
+                  "value": "undefined",
+                  "name": "X-Rate-Limit-Limit",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "615",
+              "body": "{\"durations\":[[406]],\"sources\":[{\"location\":[77.625509,12.972101],\"name\":\"1st Main Road\"}],\"destinations\":[{\"location\":[77.608965,12.97568],\"name\":\"\"}],\"code\":\"Ok\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "02e97953-c691-6a82-0252-52d5b81561aa",
+          "name": "Walking Duration (in seconds)",
+          "request": {
+            "url": {
+              "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "api",
+                "mapbox",
+                "com"
+              ],
+              "path": [
+                "directions-matrix",
+                "v1",
+                "mapbox",
+                "driving",
+                "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+              ],
+              "query": [
+                {
+                  "key": "sources",
+                  "value": "0",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "destinations",
+                  "value": "1",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "access_token",
+                  "value": "{{access_token}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "f4be0c1b-6d33-2c31-efc0-8dae4da2386f",
+              "name": "Walking Duration Between Indiranagar and MG Road Metro",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/walking/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+                  "protocol": "https",
+                  "auth": {},
+                  "host": [
+                    "api",
+                    "mapbox",
+                    "com"
+                  ],
+                  "path": [
+                    "directions-matrix",
+                    "v1",
+                    "mapbox",
+                    "walking",
+                    "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sources",
+                      "value": "0",
+                      "equals": true,
+                      "description": ""
+                    },
+                    {
+                      "key": "destinations",
+                      "value": "1",
+                      "equals": true,
+                      "description": ""
+                    },
+                    {
+                      "key": "access_token",
+                      "value": "{{access_token}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "header": [],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "max-age=0",
+                  "name": "Cache-Control",
+                  "description": ""
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "name": "Connection",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "167",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jun 2017 09:38:03 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a7-7qTqUCRQGZZ7YIpZvUL5yw\"",
+                  "name": "ETag",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 a1a8d4d26d621f1f9229ae3a9a396162.cloudfront.net (CloudFront)",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Amz-Cf-Id",
+                  "value": "RtYuFCrlUYHybBwgyLWbg44uEPY7BB4TZoX0-6SeU1gjx_K5X0YrRQ==",
+                  "name": "X-Amz-Cf-Id",
+                  "description": ""
+                },
+                {
+                  "key": "X-Cache",
+                  "value": "Miss from cloudfront",
+                  "name": "X-Cache",
+                  "description": ""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "name": "X-Powered-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Interval",
+                  "value": "60",
+                  "name": "X-Rate-Limit-Interval",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Limit",
+                  "value": "undefined",
+                  "name": "X-Rate-Limit-Limit",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1030",
+              "body": "{\"durations\":[[1507.9]],\"sources\":[{\"location\":[77.625509,12.972101],\"name\":\"1st Main Road\"}],\"destinations\":[{\"location\":[77.608965,12.97568],\"name\":\"\"}],\"code\":\"Ok\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_postman_id": "d71280c7-d77e-1696-85b1-a156c25e3bd3",
+      "name": "Google Fit",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6b78f884-1585-fbee-4e95-1e497e857bb0",
+          "name": "Aggregate Step Data ",
+          "request": {
+            "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
+            },
+            "description": "- Aggregate by ms buckets \n- Start and End time in ms (Should be now and last 7 days)"
+          },
+          "response": [
+            {
+              "id": "57a72bd0-3e78-94c8-60d6-6a9b3916da73",
+              "name": "Aggregating Steps",
+              "originalRequest": {
+                "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "disabled": false
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
+                    "description": "",
+                    "disabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Alt-Svc",
+                  "value": "quic=\":443\"; ma=2592000; v=\"38,37,36,35\"",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "private, max-age=0",
+                  "name": "Cache-Control",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=UTF-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Jun 2017 06:52:07 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Expires",
+                  "value": "Sun, 18 Jun 2017 06:52:07 GMT",
+                  "name": "Expires",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "GSE",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "X-Origin",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"https://accounts.google.com/\", error=invalid_token",
+                  "name": "WWW-Authenticate",
+                  "description": ""
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "name": "X-Content-Type-Options",
+                  "description": ""
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN",
+                  "name": "X-Frame-Options",
+                  "description": ""
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "name": "X-XSS-Protection",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "206",
+              "body": "{\n\"bucket\": [\n{\n\"startTimeMillis\": \"1497471598000\",\n\"endTimeMillis\": \"1497557998000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497503120380357294\",\n\"endTimeNanos\": \"1497551907637000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 4566,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n},\n{\n\"startTimeMillis\": \"1497557998000\",\n\"endTimeMillis\": \"1497644398000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497582017081000000\",\n\"endTimeNanos\": \"1497636906347000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 7268,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n},\n{\n\"startTimeMillis\": \"1497644398000\",\n\"endTimeMillis\": \"1497730798000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497682270767000000\",\n\"endTimeNanos\": \"1497718974812000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 7958,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n}\n]\n}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "253a0611-db3a-4a21-45f0-2ad4fe1a63e9",
+          "name": "Get Data Sources",
+          "request": {
+            "url": "https://www.googleapis.com/fitness/v1/users/me/dataSources",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "Look for datastreamid and motog5"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "1f00d003-3f53-3afe-fda0-e584e2f88fd0",
+      "name": "Google Maps Driving in Traffic - Distance Matrix",
+      "request": {
+        "url": {
+          "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
+          "protocol": "https",
+          "auth": {},
+          "host": [
+            "maps",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "maps",
+            "api",
+            "distancematrix",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "origins",
+              "value": "12.965400899999999,77.6476818",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "destinations",
+              "value": "13.00995,77.55458999999996",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "mode",
+              "value": "driving",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "units",
+              "value": "metric",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "departure_time",
+              "value": "now",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "traffic_model",
+              "value": "pessimistic",
+              "equals": true,
+              "description": ""
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": [
+        {
+          "id": "ed78e30b-705a-342e-cdf4-794d37ad117b",
+          "name": "Driving Duration with traffic departing now",
+          "originalRequest": {
+            "url": {
+              "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "maps",
+                "googleapis",
+                "com"
+              ],
+              "path": [
+                "maps",
+                "api",
+                "distancematrix",
+                "json"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "origins",
+                  "value": "12.965400899999999,77.6476818",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "destinations",
+                  "value": "13.00995,77.55458999999996",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "mode",
+                  "value": "driving",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "units",
+                  "value": "metric",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "departure_time",
+                  "value": "now",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "traffic_model",
+                  "value": "pessimistic",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "_postman_previewtype": "text",
+          "header": [
+            {
+              "key": "Alt-Svc",
+              "value": "quic=\":443\"; ma=2592000; v=\"38,37,36,35\"",
+              "name": "Alt-Svc",
+              "description": ""
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=30",
+              "name": "Cache-Control",
+              "description": ""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip",
+              "name": "Content-Encoding",
+              "description": ""
+            },
+            {
+              "key": "Content-Length",
+              "value": "330",
+              "name": "Content-Length",
+              "description": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8",
+              "name": "Content-Type",
+              "description": ""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 19 Jun 2017 20:06:36 GMT",
+              "name": "Date",
+              "description": ""
+            },
+            {
+              "key": "Expires",
+              "value": "Mon, 19 Jun 2017 20:07:06 GMT",
+              "name": "Expires",
+              "description": ""
+            },
+            {
+              "key": "Server",
+              "value": "mafe",
+              "name": "Server",
+              "description": ""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Language",
+              "name": "Vary",
+              "description": ""
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN",
+              "name": "X-Frame-Options",
+              "description": ""
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "name": "X-XSS-Protection",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "491",
+          "body": "{\n   \"destination_addresses\" : [\n      \"52B/C, Dr Rajkumar Rd, A Block, Milk Colony, Subramanyanagar,2 State, Rajaji Nagar, Bengaluru, Karnataka 560010, India\"\n   ],\n   \"origin_addresses\" : [\n      \"2899, 2nd A Main Rd, HAL 3rd Stage, Kodihalli, Bengaluru, Karnataka 560008, India\"\n   ],\n   \"rows\" : [\n      {\n         \"elements\" : [\n            {\n               \"distance\" : {\n                  \"text\" : \"16.1 km\",\n                  \"value\" : 16056\n               },\n               \"duration\" : {\n                  \"text\" : \"44 mins\",\n                  \"value\" : 2614\n               },\n               \"duration_in_traffic\" : {\n                  \"text\" : \"36 mins\",\n                  \"value\" : 2173\n               },\n               \"status\" : \"OK\"\n            }\n         ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
+        }
+      ]
+    }
+  ]
+}
