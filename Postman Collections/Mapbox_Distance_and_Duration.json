@@ -8,6 +8,177 @@
   },
   "item": [
     {
+      "_postman_id": "d71280c7-d77e-1696-85b1-a156c25e3bd3",
+      "name": "Google Fit",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6b78f884-1585-fbee-4e95-1e497e857bb0",
+          "name": "Aggregate Step Data ",
+          "request": {
+            "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
+            },
+            "description": "- Aggregate by ms buckets \n- Start and End time in ms (Should be now and last 7 days)"
+          },
+          "response": [
+            {
+              "id": "57a72bd0-3e78-94c8-60d6-6a9b3916da73",
+              "name": "Aggregating Steps",
+              "originalRequest": {
+                "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "disabled": false
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
+                    "description": "",
+                    "disabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Alt-Svc",
+                  "value": "quic=\":443\"; ma=2592000; v=\"38,37,36,35\"",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "private, max-age=0",
+                  "name": "Cache-Control",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=UTF-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Jun 2017 06:52:07 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Expires",
+                  "value": "Sun, 18 Jun 2017 06:52:07 GMT",
+                  "name": "Expires",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "GSE",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "X-Origin",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"https://accounts.google.com/\", error=invalid_token",
+                  "name": "WWW-Authenticate",
+                  "description": ""
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "name": "X-Content-Type-Options",
+                  "description": ""
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN",
+                  "name": "X-Frame-Options",
+                  "description": ""
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "name": "X-XSS-Protection",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "206",
+              "body": "{\n\"bucket\": [\n{\n\"startTimeMillis\": \"1497471598000\",\n\"endTimeMillis\": \"1497557998000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497503120380357294\",\n\"endTimeNanos\": \"1497551907637000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 4566,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n},\n{\n\"startTimeMillis\": \"1497557998000\",\n\"endTimeMillis\": \"1497644398000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497582017081000000\",\n\"endTimeNanos\": \"1497636906347000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 7268,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n},\n{\n\"startTimeMillis\": \"1497644398000\",\n\"endTimeMillis\": \"1497730798000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497682270767000000\",\n\"endTimeNanos\": \"1497718974812000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 7958,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n}\n]\n}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "253a0611-db3a-4a21-45f0-2ad4fe1a63e9",
+          "name": "Get Data Sources",
+          "request": {
+            "url": "https://www.googleapis.com/fitness/v1/users/me/dataSources",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "Look for datastreamid and motog5"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "a498a9c2-c21b-1408-4c2f-1c2bf8d16372",
       "name": "Mapbox",
       "description": "",
@@ -395,177 +566,6 @@
       ]
     },
     {
-      "_postman_id": "d71280c7-d77e-1696-85b1-a156c25e3bd3",
-      "name": "Google Fit",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "6b78f884-1585-fbee-4e95-1e497e857bb0",
-          "name": "Aggregate Step Data ",
-          "request": {
-            "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
-            },
-            "description": "- Aggregate by ms buckets \n- Start and End time in ms (Should be now and last 7 days)"
-          },
-          "response": [
-            {
-              "id": "57a72bd0-3e78-94c8-60d6-6a9b3916da73",
-              "name": "Aggregating Steps",
-              "originalRequest": {
-                "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": "",
-                    "disabled": false
-                  },
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
-                    "description": "",
-                    "disabled": false
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
-                }
-              },
-              "status": "Unauthorized",
-              "code": 401,
-              "_postman_previewlanguage": "json",
-              "_postman_previewtype": "text",
-              "header": [
-                {
-                  "key": "Alt-Svc",
-                  "value": "quic=\":443\"; ma=2592000; v=\"38,37,36,35\"",
-                  "name": "Alt-Svc",
-                  "description": ""
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, max-age=0",
-                  "name": "Cache-Control",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "gzip",
-                  "name": "Content-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=UTF-8",
-                  "name": "Content-Type",
-                  "description": ""
-                },
-                {
-                  "key": "Date",
-                  "value": "Sun, 18 Jun 2017 06:52:07 GMT",
-                  "name": "Date",
-                  "description": ""
-                },
-                {
-                  "key": "Expires",
-                  "value": "Sun, 18 Jun 2017 06:52:07 GMT",
-                  "name": "Expires",
-                  "description": ""
-                },
-                {
-                  "key": "Server",
-                  "value": "GSE",
-                  "name": "Server",
-                  "description": ""
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked",
-                  "name": "Transfer-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Vary",
-                  "value": "Origin",
-                  "name": "Vary",
-                  "description": ""
-                },
-                {
-                  "key": "Vary",
-                  "value": "X-Origin",
-                  "name": "Vary",
-                  "description": ""
-                },
-                {
-                  "key": "WWW-Authenticate",
-                  "value": "Bearer realm=\"https://accounts.google.com/\", error=invalid_token",
-                  "name": "WWW-Authenticate",
-                  "description": ""
-                },
-                {
-                  "key": "X-Content-Type-Options",
-                  "value": "nosniff",
-                  "name": "X-Content-Type-Options",
-                  "description": ""
-                },
-                {
-                  "key": "X-Frame-Options",
-                  "value": "SAMEORIGIN",
-                  "name": "X-Frame-Options",
-                  "description": ""
-                },
-                {
-                  "key": "X-XSS-Protection",
-                  "value": "1; mode=block",
-                  "name": "X-XSS-Protection",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "206",
-              "body": "{\n\"bucket\": [\n{\n\"startTimeMillis\": \"1497471598000\",\n\"endTimeMillis\": \"1497557998000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497503120380357294\",\n\"endTimeNanos\": \"1497551907637000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 4566,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n},\n{\n\"startTimeMillis\": \"1497557998000\",\n\"endTimeMillis\": \"1497644398000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497582017081000000\",\n\"endTimeNanos\": \"1497636906347000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 7268,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n},\n{\n\"startTimeMillis\": \"1497644398000\",\n\"endTimeMillis\": \"1497730798000\",\n\"dataset\": [\n{\n\"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:aggregated\",\n\"point\": [\n{\n\"startTimeNanos\": \"1497682270767000000\",\n\"endTimeNanos\": \"1497718974812000000\",\n\"dataTypeName\": \"com.google.step_count.delta\",\n\"originDataSourceId\": \"raw:com.google.step_count.cumulative:motorola:Moto G (5) Plus:6488b97fc8090dfc:Step Counter sensor\",\n\"value\": [\n{\n\"intVal\": 7958,\n\"mapVal\": []\n}\n]\n}\n]\n}\n]\n}\n]\n}"
-            }
-          ]
-        },
-        {
-          "_postman_id": "253a0611-db3a-4a21-45f0-2ad4fe1a63e9",
-          "name": "Get Data Sources",
-          "request": {
-            "url": "https://www.googleapis.com/fitness/v1/users/me/dataSources",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "Look for datastreamid and motog5"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "1f00d003-3f53-3afe-fda0-e584e2f88fd0",
       "name": "Google Maps Driving in Traffic - Distance Matrix",
       "request": {
@@ -638,6 +638,224 @@
       "response": [
         {
           "id": "ed78e30b-705a-342e-cdf4-794d37ad117b",
+          "name": "Driving Duration with traffic departing now",
+          "originalRequest": {
+            "url": {
+              "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "maps",
+                "googleapis",
+                "com"
+              ],
+              "path": [
+                "maps",
+                "api",
+                "distancematrix",
+                "json"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "origins",
+                  "value": "12.965400899999999,77.6476818",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "destinations",
+                  "value": "13.00995,77.55458999999996",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "mode",
+                  "value": "driving",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "units",
+                  "value": "metric",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "departure_time",
+                  "value": "now",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "traffic_model",
+                  "value": "pessimistic",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "_postman_previewtype": "text",
+          "header": [
+            {
+              "key": "Alt-Svc",
+              "value": "quic=\":443\"; ma=2592000; v=\"38,37,36,35\"",
+              "name": "Alt-Svc",
+              "description": ""
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=30",
+              "name": "Cache-Control",
+              "description": ""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip",
+              "name": "Content-Encoding",
+              "description": ""
+            },
+            {
+              "key": "Content-Length",
+              "value": "330",
+              "name": "Content-Length",
+              "description": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8",
+              "name": "Content-Type",
+              "description": ""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 19 Jun 2017 20:06:36 GMT",
+              "name": "Date",
+              "description": ""
+            },
+            {
+              "key": "Expires",
+              "value": "Mon, 19 Jun 2017 20:07:06 GMT",
+              "name": "Expires",
+              "description": ""
+            },
+            {
+              "key": "Server",
+              "value": "mafe",
+              "name": "Server",
+              "description": ""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Language",
+              "name": "Vary",
+              "description": ""
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN",
+              "name": "X-Frame-Options",
+              "description": ""
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "name": "X-XSS-Protection",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "491",
+          "body": "{\n   \"destination_addresses\" : [\n      \"52B/C, Dr Rajkumar Rd, A Block, Milk Colony, Subramanyanagar,2 State, Rajaji Nagar, Bengaluru, Karnataka 560010, India\"\n   ],\n   \"origin_addresses\" : [\n      \"2899, 2nd A Main Rd, HAL 3rd Stage, Kodihalli, Bengaluru, Karnataka 560008, India\"\n   ],\n   \"rows\" : [\n      {\n         \"elements\" : [\n            {\n               \"distance\" : {\n                  \"text\" : \"16.1 km\",\n                  \"value\" : 16056\n               },\n               \"duration\" : {\n                  \"text\" : \"44 mins\",\n                  \"value\" : 2614\n               },\n               \"duration_in_traffic\" : {\n                  \"text\" : \"36 mins\",\n                  \"value\" : 2173\n               },\n               \"status\" : \"OK\"\n            }\n         ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
+        }
+      ]
+    },
+    {
+      "_postman_id": "2f3228a5-133c-9aa7-ad9f-96aed57f3130",
+      "name": "Google Maps Driving in Traffic - Distance Matrix copy",
+      "request": {
+        "url": {
+          "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
+          "protocol": "https",
+          "auth": {},
+          "host": [
+            "maps",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "maps",
+            "api",
+            "distancematrix",
+            "json"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "origins",
+              "value": "12.965400899999999,77.6476818",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "destinations",
+              "value": "13.00995,77.55458999999996",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "mode",
+              "value": "driving",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "units",
+              "value": "metric",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "departure_time",
+              "value": "now",
+              "equals": true,
+              "description": ""
+            },
+            {
+              "key": "traffic_model",
+              "value": "pessimistic",
+              "equals": true,
+              "description": ""
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": [
+        {
+          "id": "d50d8d21-24b6-431e-b8d3-cd630558300f",
           "name": "Driving Duration with traffic departing now",
           "originalRequest": {
             "url": {
