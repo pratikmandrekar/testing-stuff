@@ -356,185 +356,6 @@
           ]
         },
         {
-          "_postman_id": "bd513016-9916-4a8f-c5a9-f175b14989a8",
-          "name": "Driving Duration (in seconds) copy",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "url": {
-              "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
-              "protocol": "https",
-              "host": [
-                "api",
-                "mapbox",
-                "com"
-              ],
-              "path": [
-                "directions-matrix",
-                "v1",
-                "mapbox",
-                "driving",
-                "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
-              ],
-              "query": [
-                {
-                  "key": "sources",
-                  "value": "0",
-                  "equals": true
-                },
-                {
-                  "key": "destinations",
-                  "value": "1",
-                  "equals": true
-                },
-                {
-                  "key": "access_token",
-                  "value": "{{access_token}}",
-                  "equals": true
-                }
-              ]
-            },
-            "description": null
-          },
-          "response": [
-            {
-              "id": "9b17e680-f02a-4b0f-c20a-07cc8c2d5542",
-              "name": "Driving Duration Between MG Road Metro and Indiranagar Metro",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "body": {},
-                "url": {
-                  "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
-                  "protocol": "https",
-                  "host": [
-                    "api",
-                    "mapbox",
-                    "com"
-                  ],
-                  "path": [
-                    "directions-matrix",
-                    "v1",
-                    "mapbox",
-                    "driving",
-                    "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "sources",
-                      "value": "0",
-                      "equals": true
-                    },
-                    {
-                      "key": "destinations",
-                      "value": "1",
-                      "equals": true
-                    },
-                    {
-                      "key": "access_token",
-                      "value": "{{access_token}}",
-                      "equals": true
-                    }
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "name": "Access-Control-Allow-Origin",
-                  "description": ""
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "max-age=0",
-                  "name": "Cache-Control",
-                  "description": ""
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "name": "Connection",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "164",
-                  "name": "Content-Length",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "name": "Content-Type",
-                  "description": ""
-                },
-                {
-                  "key": "Date",
-                  "value": "Fri, 16 Jun 2017 09:35:48 GMT",
-                  "name": "Date",
-                  "description": ""
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"a4-QHw6paKInVNHGS70MbI7KA\"",
-                  "name": "ETag",
-                  "description": ""
-                },
-                {
-                  "key": "Vary",
-                  "value": "Accept-Encoding",
-                  "name": "Vary",
-                  "description": ""
-                },
-                {
-                  "key": "Via",
-                  "value": "1.1 a1a8d4d26d621f1f9229ae3a9a396162.cloudfront.net (CloudFront)",
-                  "name": "Via",
-                  "description": ""
-                },
-                {
-                  "key": "X-Amz-Cf-Id",
-                  "value": "HZfXCv0NWgbTv9ogKh22spLDWK6oLeuorUcbhUU1wSJte0abGdpQxA==",
-                  "name": "X-Amz-Cf-Id",
-                  "description": ""
-                },
-                {
-                  "key": "X-Cache",
-                  "value": "Miss from cloudfront",
-                  "name": "X-Cache",
-                  "description": ""
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "name": "X-Powered-By",
-                  "description": ""
-                },
-                {
-                  "key": "X-Rate-Limit-Interval",
-                  "value": "60",
-                  "name": "X-Rate-Limit-Interval",
-                  "description": ""
-                },
-                {
-                  "key": "X-Rate-Limit-Limit",
-                  "value": "undefined",
-                  "name": "X-Rate-Limit-Limit",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "615",
-              "body": "{\"durations\":[[406]],\"sources\":[{\"location\":[77.625509,12.972101],\"name\":\"1st Main Road\"}],\"destinations\":[{\"location\":[77.608965,12.97568],\"name\":\"\"}],\"code\":\"Ok\"}"
-            }
-          ]
-        },
-        {
           "_postman_id": "02e97953-c691-6a82-0252-52d5b81561aa",
           "name": "Walking Duration (in seconds)",
           "request": {
@@ -710,6 +531,185 @@
               "cookie": [],
               "responseTime": "1030",
               "body": "{\"durations\":[[1507.9]],\"sources\":[{\"location\":[77.625509,12.972101],\"name\":\"1st Main Road\"}],\"destinations\":[{\"location\":[77.608965,12.97568],\"name\":\"\"}],\"code\":\"Ok\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "bd513016-9916-4a8f-c5a9-f175b14989a8",
+          "name": "Driving Duration (in seconds) copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+              "protocol": "https",
+              "host": [
+                "api",
+                "mapbox",
+                "com"
+              ],
+              "path": [
+                "directions-matrix",
+                "v1",
+                "mapbox",
+                "driving",
+                "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+              ],
+              "query": [
+                {
+                  "key": "sources",
+                  "value": "0",
+                  "equals": true
+                },
+                {
+                  "key": "destinations",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "access_token",
+                  "value": "{{access_token}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": [
+            {
+              "id": "9b17e680-f02a-4b0f-c20a-07cc8c2d5542",
+              "name": "Driving Duration Between MG Road Metro and Indiranagar Metro",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {},
+                "url": {
+                  "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "mapbox",
+                    "com"
+                  ],
+                  "path": [
+                    "directions-matrix",
+                    "v1",
+                    "mapbox",
+                    "driving",
+                    "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sources",
+                      "value": "0",
+                      "equals": true
+                    },
+                    {
+                      "key": "destinations",
+                      "value": "1",
+                      "equals": true
+                    },
+                    {
+                      "key": "access_token",
+                      "value": "{{access_token}}",
+                      "equals": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "max-age=0",
+                  "name": "Cache-Control",
+                  "description": ""
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "name": "Connection",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "164",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jun 2017 09:35:48 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a4-QHw6paKInVNHGS70MbI7KA\"",
+                  "name": "ETag",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 a1a8d4d26d621f1f9229ae3a9a396162.cloudfront.net (CloudFront)",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Amz-Cf-Id",
+                  "value": "HZfXCv0NWgbTv9ogKh22spLDWK6oLeuorUcbhUU1wSJte0abGdpQxA==",
+                  "name": "X-Amz-Cf-Id",
+                  "description": ""
+                },
+                {
+                  "key": "X-Cache",
+                  "value": "Miss from cloudfront",
+                  "name": "X-Cache",
+                  "description": ""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "name": "X-Powered-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Interval",
+                  "value": "60",
+                  "name": "X-Rate-Limit-Interval",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Limit",
+                  "value": "undefined",
+                  "name": "X-Rate-Limit-Limit",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "615",
+              "body": "{\"durations\":[[406]],\"sources\":[{\"location\":[77.625509,12.972101],\"name\":\"1st Main Road\"}],\"destinations\":[{\"location\":[77.608965,12.97568],\"name\":\"\"}],\"code\":\"Ok\"}"
             }
           ]
         }
