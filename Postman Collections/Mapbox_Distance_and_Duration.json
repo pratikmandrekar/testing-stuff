@@ -1,5 +1,4 @@
 {
-  "variables": [],
   "info": {
     "name": "Mapbox Distance and Duration",
     "_postman_id": "375d306d-21a5-cd72-a8c7-7c5a7da6fa1b",
@@ -16,24 +15,22 @@
           "_postman_id": "6b78f884-1585-fbee-4e95-1e497e857bb0",
           "name": "Aggregate Step Data ",
           "request": {
-            "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               },
               {
                 "key": "Authorization",
-                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
-                "description": ""
+                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
             },
+            "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
             "description": "- Aggregate by ms buckets \n- Start and End time in ms (Should be now and last 7 days)"
           },
           "response": [
@@ -41,31 +38,28 @@
               "id": "57a72bd0-3e78-94c8-60d6-6a9b3916da73",
               "name": "Aggregating Steps",
               "originalRequest": {
-                "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate",
                 "method": "POST",
                 "header": [
                   {
                     "key": "Content-Type",
                     "value": "application/json",
-                    "description": "",
                     "disabled": false
                   },
                   {
                     "key": "Authorization",
                     "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
-                    "description": "",
                     "disabled": false
                   }
                 ],
                 "body": {
                   "mode": "raw",
                   "raw": "{\n  \"aggregateBy\": [{\n    \"dataTypeName\": \"com.google.step_count.delta\",\n    \"dataSourceId\": \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\n  }],\n  \"bucketByTime\": { \"durationMillis\": 86400000 },\n  \"startTimeMillis\": 1497471598000,\n  \"endTimeMillis\": 1497730798000\n}"
-                }
+                },
+                "url": "https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate"
               },
               "status": "Unauthorized",
               "code": 401,
               "_postman_previewlanguage": "json",
-              "_postman_previewtype": "text",
               "header": [
                 {
                   "key": "Alt-Svc",
@@ -162,16 +156,15 @@
           "_postman_id": "253a0611-db3a-4a21-45f0-2ad4fe1a63e9",
           "name": "Get Data Sources",
           "request": {
-            "url": "https://www.googleapis.com/fitness/v1/users/me/dataSources",
             "method": "GET",
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI",
-                "description": ""
+                "value": "Bearer ya29.GltsBEy178ZQhJgebQAMRx0_yw5VejowsYK7zRi3QfLHv8TAjR-RFMnlN9uIj3FmOdkDsw7uaMkj0l5wHmy8oq9wdo-tPwvfEibjQW1XB2NyZCrTIt-ZBlheqmEI"
               }
             ],
             "body": {},
+            "url": "https://www.googleapis.com/fitness/v1/users/me/dataSources",
             "description": "Look for datastreamid and motog5"
           },
           "response": []
@@ -187,10 +180,12 @@
           "_postman_id": "f741bc44-972a-2964-3162-16545d5ad06a",
           "name": "Driving Duration (in seconds)",
           "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
             "url": {
               "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
               "protocol": "https",
-              "auth": {},
               "host": [
                 "api",
                 "mapbox",
@@ -207,27 +202,20 @@
                 {
                   "key": "sources",
                   "value": "0",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "destinations",
                   "value": "1",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "access_token",
                   "value": "{{access_token}}",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 }
-              ],
-              "variable": []
+              ]
             },
-            "method": "GET",
-            "header": [],
-            "body": {},
             "description": ""
           },
           "response": [
@@ -235,10 +223,12 @@
               "id": "76136b01-fb1c-1f5b-e13f-3e493bbee5c4",
               "name": "Driving Duration Between MG Road Metro and Indiranagar Metro",
               "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {},
                 "url": {
                   "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
                   "protocol": "https",
-                  "auth": {},
                   "host": [
                     "api",
                     "mapbox",
@@ -255,32 +245,203 @@
                     {
                       "key": "sources",
                       "value": "0",
-                      "equals": true,
-                      "description": ""
+                      "equals": true
                     },
                     {
                       "key": "destinations",
                       "value": "1",
-                      "equals": true,
-                      "description": ""
+                      "equals": true
                     },
                     {
                       "key": "access_token",
                       "value": "{{access_token}}",
-                      "equals": true,
-                      "description": ""
+                      "equals": true
                     }
-                  ],
-                  "variable": []
-                },
-                "method": "GET",
-                "header": [],
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "json",
-              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "max-age=0",
+                  "name": "Cache-Control",
+                  "description": ""
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "name": "Connection",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "164",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jun 2017 09:35:48 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a4-QHw6paKInVNHGS70MbI7KA\"",
+                  "name": "ETag",
+                  "description": ""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "name": "Vary",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 a1a8d4d26d621f1f9229ae3a9a396162.cloudfront.net (CloudFront)",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Amz-Cf-Id",
+                  "value": "HZfXCv0NWgbTv9ogKh22spLDWK6oLeuorUcbhUU1wSJte0abGdpQxA==",
+                  "name": "X-Amz-Cf-Id",
+                  "description": ""
+                },
+                {
+                  "key": "X-Cache",
+                  "value": "Miss from cloudfront",
+                  "name": "X-Cache",
+                  "description": ""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "name": "X-Powered-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Interval",
+                  "value": "60",
+                  "name": "X-Rate-Limit-Interval",
+                  "description": ""
+                },
+                {
+                  "key": "X-Rate-Limit-Limit",
+                  "value": "undefined",
+                  "name": "X-Rate-Limit-Limit",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "615",
+              "body": "{\"durations\":[[406]],\"sources\":[{\"location\":[77.625509,12.972101],\"name\":\"1st Main Road\"}],\"destinations\":[{\"location\":[77.608965,12.97568],\"name\":\"\"}],\"code\":\"Ok\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "bd513016-9916-4a8f-c5a9-f175b14989a8",
+          "name": "Driving Duration (in seconds) copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+              "protocol": "https",
+              "host": [
+                "api",
+                "mapbox",
+                "com"
+              ],
+              "path": [
+                "directions-matrix",
+                "v1",
+                "mapbox",
+                "driving",
+                "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+              ],
+              "query": [
+                {
+                  "key": "sources",
+                  "value": "0",
+                  "equals": true
+                },
+                {
+                  "key": "destinations",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "access_token",
+                  "value": "{{access_token}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": null
+          },
+          "response": [
+            {
+              "id": "9b17e680-f02a-4b0f-c20a-07cc8c2d5542",
+              "name": "Driving Duration Between MG Road Metro and Indiranagar Metro",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {},
+                "url": {
+                  "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
+                  "protocol": "https",
+                  "host": [
+                    "api",
+                    "mapbox",
+                    "com"
+                  ],
+                  "path": [
+                    "directions-matrix",
+                    "v1",
+                    "mapbox",
+                    "driving",
+                    "{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sources",
+                      "value": "0",
+                      "equals": true
+                    },
+                    {
+                      "key": "destinations",
+                      "value": "1",
+                      "equals": true
+                    },
+                    {
+                      "key": "access_token",
+                      "value": "{{access_token}}",
+                      "equals": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Access-Control-Allow-Origin",
@@ -377,10 +538,12 @@
           "_postman_id": "02e97953-c691-6a82-0252-52d5b81561aa",
           "name": "Walking Duration (in seconds)",
           "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
             "url": {
               "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
               "protocol": "https",
-              "auth": {},
               "host": [
                 "api",
                 "mapbox",
@@ -397,27 +560,20 @@
                 {
                   "key": "sources",
                   "value": "0",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "destinations",
                   "value": "1",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "access_token",
                   "value": "{{access_token}}",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 }
-              ],
-              "variable": []
+              ]
             },
-            "method": "GET",
-            "header": [],
-            "body": {},
             "description": ""
           },
           "response": [
@@ -425,10 +581,12 @@
               "id": "f4be0c1b-6d33-2c31-efc0-8dae4da2386f",
               "name": "Walking Duration Between Indiranagar and MG Road Metro",
               "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {},
                 "url": {
                   "raw": "https://api.mapbox.com/directions-matrix/v1/mapbox/walking/{{INDIRANAGAR_METRO}};{{MG_ROAD_METRO}}?sources=0&destinations=1&access_token={{access_token}}",
                   "protocol": "https",
-                  "auth": {},
                   "host": [
                     "api",
                     "mapbox",
@@ -445,32 +603,24 @@
                     {
                       "key": "sources",
                       "value": "0",
-                      "equals": true,
-                      "description": ""
+                      "equals": true
                     },
                     {
                       "key": "destinations",
                       "value": "1",
-                      "equals": true,
-                      "description": ""
+                      "equals": true
                     },
                     {
                       "key": "access_token",
                       "value": "{{access_token}}",
-                      "equals": true,
-                      "description": ""
+                      "equals": true
                     }
-                  ],
-                  "variable": []
-                },
-                "method": "GET",
-                "header": [],
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
               "_postman_previewlanguage": "json",
-              "_postman_previewtype": "text",
               "header": [
                 {
                   "key": "Access-Control-Allow-Origin",
@@ -569,10 +719,12 @@
       "_postman_id": "1f00d003-3f53-3afe-fda0-e584e2f88fd0",
       "name": "Google Maps Driving in Traffic - Distance Matrix",
       "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
         "url": {
           "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
           "protocol": "https",
-          "auth": {},
           "host": [
             "maps",
             "googleapis",
@@ -588,51 +740,40 @@
             {
               "key": "key",
               "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "origins",
               "value": "12.965400899999999,77.6476818",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "destinations",
               "value": "13.00995,77.55458999999996",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "mode",
               "value": "driving",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "units",
               "value": "metric",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "departure_time",
               "value": "now",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "traffic_model",
               "value": "pessimistic",
-              "equals": true,
-              "description": ""
+              "equals": true
             }
-          ],
-          "variable": []
+          ]
         },
-        "method": "GET",
-        "header": [],
-        "body": {},
         "description": ""
       },
       "response": [
@@ -640,10 +781,12 @@
           "id": "ed78e30b-705a-342e-cdf4-794d37ad117b",
           "name": "Driving Duration with traffic departing now",
           "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {},
             "url": {
               "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
               "protocol": "https",
-              "auth": {},
               "host": [
                 "maps",
                 "googleapis",
@@ -659,56 +802,44 @@
                 {
                   "key": "key",
                   "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "origins",
                   "value": "12.965400899999999,77.6476818",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "destinations",
                   "value": "13.00995,77.55458999999996",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "mode",
                   "value": "driving",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "units",
                   "value": "metric",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "departure_time",
                   "value": "now",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "traffic_model",
                   "value": "pessimistic",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [],
-            "body": {}
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "_postman_previewtype": "text",
           "header": [
             {
               "key": "Alt-Svc",
@@ -787,10 +918,12 @@
       "_postman_id": "2f3228a5-133c-9aa7-ad9f-96aed57f3130",
       "name": "Google Maps Driving in Traffic - Distance Matrix copy",
       "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
         "url": {
           "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
           "protocol": "https",
-          "auth": {},
           "host": [
             "maps",
             "googleapis",
@@ -806,51 +939,40 @@
             {
               "key": "key",
               "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "origins",
               "value": "12.965400899999999,77.6476818",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "destinations",
               "value": "13.00995,77.55458999999996",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "mode",
               "value": "driving",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "units",
               "value": "metric",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "departure_time",
               "value": "now",
-              "equals": true,
-              "description": ""
+              "equals": true
             },
             {
               "key": "traffic_model",
               "value": "pessimistic",
-              "equals": true,
-              "description": ""
+              "equals": true
             }
-          ],
-          "variable": []
+          ]
         },
-        "method": "GET",
-        "header": [],
-        "body": {},
         "description": ""
       },
       "response": [
@@ -858,10 +980,12 @@
           "id": "d50d8d21-24b6-431e-b8d3-cd630558300f",
           "name": "Driving Duration with traffic departing now",
           "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {},
             "url": {
               "raw": "https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE&origins=12.965400899999999,77.6476818&destinations=13.00995,77.55458999999996&mode=driving&units=metric&departure_time=now&traffic_model=pessimistic",
               "protocol": "https",
-              "auth": {},
               "host": [
                 "maps",
                 "googleapis",
@@ -877,56 +1001,44 @@
                 {
                   "key": "key",
                   "value": "AIzaSyC0vaXNsgMJLWPgy_VnLctx8eyp9STmfGE",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "origins",
                   "value": "12.965400899999999,77.6476818",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "destinations",
                   "value": "13.00995,77.55458999999996",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "mode",
                   "value": "driving",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "units",
                   "value": "metric",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "departure_time",
                   "value": "now",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 },
                 {
                   "key": "traffic_model",
                   "value": "pessimistic",
-                  "equals": true,
-                  "description": ""
+                  "equals": true
                 }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [],
-            "body": {}
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "_postman_previewtype": "text",
           "header": [
             {
               "key": "Alt-Svc",
